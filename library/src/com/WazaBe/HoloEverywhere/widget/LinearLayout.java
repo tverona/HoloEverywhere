@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.WazaBe.HoloEverywhere.R;
-import com.actionbarsherlock.internal.nineoldandroids.view.animation.AnimatorProxy;
+import com.nineoldandroids.view.animation.AnimatorProxy;
 
 public class LinearLayout extends android.widget.LinearLayout {
 	public static final int SHOW_DIVIDER_ALL = 7;

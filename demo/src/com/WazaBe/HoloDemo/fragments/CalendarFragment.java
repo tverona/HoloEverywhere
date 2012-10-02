@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 
 import com.WazaBe.HoloDemo.R;
 import com.WazaBe.HoloEverywhere.LayoutInflater;
-import com.WazaBe.HoloEverywhere.sherlock.SFragment;
+import com.WazaBe.HoloEverywhere.app.Fragment;
 
-public class CalendarFragment extends SFragment {
+public class CalendarFragment extends Fragment {
 	private static final class CalendarFragmentHolder {
 		private static final CalendarFragment instance = new CalendarFragment();
 	}

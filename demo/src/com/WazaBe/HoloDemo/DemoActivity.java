@@ -18,58 +18,17 @@ import com.WazaBe.HoloDemo.fragments.PreferenceFragment;
 import com.WazaBe.HoloEverywhere.ArrayAdapter;
 import com.WazaBe.HoloEverywhere.LayoutInflater;
 import com.WazaBe.HoloEverywhere.ThemeManager;
+import com.WazaBe.HoloEverywhere.app.Activity;
 import com.WazaBe.HoloEverywhere.app.AlertDialog;
 import com.WazaBe.HoloEverywhere.app.DatePickerDialog;
 import com.WazaBe.HoloEverywhere.app.Fragment;
 import com.WazaBe.HoloEverywhere.app.ProgressDialog;
 import com.WazaBe.HoloEverywhere.app.TimePickerDialog;
-import com.WazaBe.HoloEverywhere.sherlock.SActivity;
 import com.WazaBe.HoloEverywhere.widget.ListPopupWindow;
 import com.WazaBe.HoloEverywhere.widget.NumberPicker;
 import com.WazaBe.HoloEverywhere.widget.Toast;
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.ActionBar.Tab;
-import com.actionbarsherlock.app.ActionBar.TabListener;
 
-public class DemoActivity extends SActivity {
-	private final class FragmentListener implements TabListener {
-		private final Class<? extends Fragment> clazz;
-		private Fragment fragment;
-
-		public FragmentListener(Class<? extends Fragment> clazz) {
-			this.clazz = clazz;
-		}
-
-		@Override
-		public void onTabReselected(Tab tab, FragmentTransaction ft) {
-
-		}
-
-		@Override
-		public void onTabSelected(Tab tab, FragmentTransaction ft) {
-			if (fragment == null) {
-				try {
-					fragment = clazz.newInstance();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-			ft.replace(android.R.id.content, fragment);
-			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-		}
-
-		@Override
-		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-
-		}
-	}
-
-	private void addTab(Class<? extends Fragment> clazz, String title) {
-		Tab tab = getSupportActionBar().newTab();
-		tab.setText(title);
-		tab.setTabListener(new FragmentListener(clazz));
-		getSupportActionBar().addTab(tab);
-	}
+public class DemoActivity extends Activity {
 
 	public void closeCalendar(View v) {
 		replaceFragment(android.R.id.content, MainFragment.getInstance());
@@ -80,17 +39,7 @@ public class DemoActivity extends SActivity {
 		setForceThemeApply(true);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.content);
-		if (isABSSupport()) {
-			getSupportActionBar().setDisplayShowTitleEnabled(false);
-			getSupportActionBar().setDisplayShowHomeEnabled(false);
-			getSupportActionBar().setNavigationMode(
-					ActionBar.NAVIGATION_MODE_TABS);
-			addTab(MainFragment.class, "Holo Demo");
-			addTab(PreferenceFragment.class, "Settings");
-			addTab(AboutFragment.class, "About");
-		} else {
-			replaceFragment(android.R.id.content, MainFragment.getInstance());
-		}
+		replaceFragment(android.R.id.content, MainFragment.getInstance());
 	}
 
 	public void replaceFragment(int resId, Fragment fragment) {

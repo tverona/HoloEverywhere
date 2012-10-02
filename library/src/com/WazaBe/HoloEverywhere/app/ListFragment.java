@@ -10,11 +10,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.WazaBe.HoloEverywhere.LayoutInflater;
 import com.WazaBe.HoloEverywhere.widget.LinearLayout;
-import com.WazaBe.HoloEverywhere.widget.ListView;
 import com.WazaBe.HoloEverywhere.widget.ProgressBar;
 
 public class ListFragment extends Fragment {

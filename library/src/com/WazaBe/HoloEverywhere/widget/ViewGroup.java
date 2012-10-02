@@ -4,10 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.accessibility.AccessibilityManager;
 
-import com.WazaBe.HoloEverywhere.sherlock.SBase;
-import com.actionbarsherlock.internal.nineoldandroids.view.NineViewGroup;
-import com.actionbarsherlock.view.ActionMode;
-
 public abstract class ViewGroup extends NineViewGroup {
 	public static final int ACCESSIBILITY_FOCUS_BACKWARD = FOCUS_BACKWARD | 0x00000002;
 	public static final int ACCESSIBILITY_FOCUS_FORWARD = FOCUS_FORWARD | 0x00000002;
@@ -41,9 +37,4 @@ public abstract class ViewGroup extends NineViewGroup {
 	public boolean isAccessibilityManagerEnabled() {
 		return isAccessibilityManagerEnabled(getContext());
 	}
-
-	public ActionMode startActionMode(ActionMode.Callback actionModeCallback) {
-		return ((SBase) getContext()).startActionMode(actionModeCallback);
-	}
-
 }

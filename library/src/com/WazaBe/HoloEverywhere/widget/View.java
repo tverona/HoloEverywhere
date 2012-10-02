@@ -7,9 +7,7 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEventSource;
 
-import com.WazaBe.HoloEverywhere.sherlock.SBase;
-import com.actionbarsherlock.internal.nineoldandroids.view.animation.AnimatorProxy;
-import com.actionbarsherlock.view.ActionMode;
+import com.nineoldandroids.view.animation.AnimatorProxy;
 
 public class View extends android.view.View implements Drawable.Callback,
 		KeyEvent.Callback, AccessibilityEventSource {
@@ -290,9 +288,5 @@ public class View extends android.view.View implements Drawable.Callback,
 			}
 		}
 		super.setVisibility(visibility);
-	}
-
-	public ActionMode startActionMode(ActionMode.Callback actionModeCallback) {
-		return ((SBase) getContext()).startActionMode(actionModeCallback);
 	}
 }

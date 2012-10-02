@@ -361,14 +361,10 @@
     <item name="android:windowBackground">@drawable/dialog_full_holo_dark</item>
     <item name="android:windowIsFloating">true</item>
     <item name="android:windowContentOverlay">@null</item>
-    <item name="windowContentOverlay">@null</item>
     <item name="android:windowAnimationStyle">@style/Holo.Animation.Dialog</item>
-    <item name="windowAnimationStyle">@style/Holo.Animation.Dialog</item>
     <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
     <item name="android:windowActionBar">false</item>
-    <item name="windowActionBar">false</item>
     <item name="android:windowActionModeOverlay">true</item>
-    <item name="windowActionModeOverlay">true</item>
     <item name="android:colorBackgroundCacheHint">@null</item>
     <item name="buttonBarStyle">@style/Holo.ButtonBar.AlertDialog</item>
     <item name="borderlessButtonStyle">@style/Holo.Button.Borderless.Small</item>
@@ -381,14 +377,10 @@
     <item name="android:windowBackground">@drawable/dialog_full_holo_light</item>
     <item name="android:windowIsFloating">true</item>
     <item name="android:windowContentOverlay">@null</item>
-    <item name="windowContentOverlay">@null</item>
     <item name="android:windowAnimationStyle">@style/Holo.Animation.Dialog</item>
-    <item name="windowAnimationStyle">@style/Holo.Animation.Dialog</item>
     <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
     <item name="android:windowActionBar">false</item>
-    <item name="windowActionBar">false</item>
     <item name="android:windowActionModeOverlay">true</item>
-    <item name="windowActionModeOverlay">true</item>
     <item name="android:colorBackgroundCacheHint">@null</item>
     <item name="buttonBarStyle">@style/Holo.ButtonBar.AlertDialog</item>
     <item name="borderlessButtonStyle">@style/Holo.Button.Borderless.Small</item>
@@ -529,43 +521,6 @@
     <item name="android:textSize">14sp</item>
   </style>
   <style name="Holo.Animation.PopupWindow" />
-  <!-- Sherlock themes -->
-  <style name="Holo.Theme.Sherlock" parent="@style/Theme.Sherlock">
-    <include name="DarkThemeData" />
-  </style>
-  <style name="Holo.Theme.Sherlock.NoActionBar">
-    <include name="NoActionBar" />
-  </style>
-  <style name="Holo.Theme.Sherlock.NoActionBar.Fullscreen">
-    <include name="Fullscreen" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Fullscreen">
-    <include name="Fullscreen" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Light" parent="@style/Theme.Sherlock.Light">
-    <include name="LightThemeData" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Light.NoActionBar">
-    <include name="NoActionBar" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Light.NoActionBar.Fullscreen">
-    <include name="Fullscreen" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Light.Fullscreen">
-    <include name="Fullscreen" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Light.DarkActionBar" parent="@style/Theme.Sherlock.Light.DarkActionBar">
-    <include name="LightThemeData" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Light.DarkActionBar.NoActionBar">
-    <include name="NoActionBar" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Light.DarkActionBar.NoActionBar.Fullscreen">
-    <include name="Fullscreen" />
-  </style>
-  <style name="Holo.Theme.Sherlock.Light.DarkActionBar.Fullscreen">
-    <include name="Fullscreen" />
-  </style>
   <!-- Standart themes -->
   <style name="Holo.Theme" parent="@android:style/Theme.Black">
     <include name="DarkThemeData" />

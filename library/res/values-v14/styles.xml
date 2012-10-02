@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
-    <!-- Dark themes -->
+    <!-- Dark theme -->
     <style name="Holo.Theme" parent="android:Theme.Holo">
         <item name="preferenceFrameLayoutStyle">@style/Holo.PreferenceFrameLayout</item>
         <item name="preferenceScreenStyle">@style/Holo.PreferenceScreen</item>
@@ -57,7 +57,6 @@
         <item name="textAppearanceLargePopupMenu">@style/Holo.TextAppearance.PopupMenu.Large</item>
         <item name="textAppearanceSmallPopupMenu">@style/Holo.TextAppearance.PopupMenu.Small</item>
     </style>
-    <style name="Holo.Theme.Sherlock" parent="Holo.Theme"/>
     <!-- Light themes -->
     <style name="Holo.Theme.Light" parent="android:Theme.Holo.Light">
         <item name="preferenceFrameLayoutStyle">@style/Holo.PreferenceFrameLayout</item>
@@ -171,6 +170,4 @@
         <item name="textAppearanceLargePopupMenu">@style/Holo.TextAppearance.PopupMenu.Light.Large</item>
         <item name="textAppearanceSmallPopupMenu">@style/Holo.TextAppearance.PopupMenu.Light.Small</item>
     </style>
-    <style name="Holo.Theme.Sherlock.Light" parent="Holo.Theme.Light"/>
-    <style name="Holo.Theme.Sherlock.Light.DarkActionBar" parent="Holo.Theme.Light.DarkActionBar"/>
 </resources>

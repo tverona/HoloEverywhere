@@ -152,14 +152,11 @@
   </define>
   <define name="NoActionBar">
     <item name="android:windowActionBar">false</item>
-    <item name="windowActionBar">false</item>
     <item name="android:windowNoTitle">true</item>
-    <item name="windowNoTitle">true</item>
   </define>
   <define name="Fullscreen">
     <item name="android:windowFullscreen">true</item>
     <item name="android:windowContentOverlay">@null</item>
-    <item name="windowContentOverlay">@null</item>
   </define>
   <define name="TextColors">
     <item name="android:textColorLink">@color/holo_blue_light</item>

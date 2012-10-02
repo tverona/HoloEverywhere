@@ -29,7 +29,6 @@ import com.WazaBe.HoloEverywhere.LayoutInflater;
 import com.WazaBe.HoloEverywhere.R;
 import com.WazaBe.HoloEverywhere.internal.NumberPickerEditText;
 import com.WazaBe.HoloEverywhere.util.Arrays;
-import com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout;
 
 public class DatePicker extends NineFrameLayout {
 	private final class Callback implements NumberPicker.OnValueChangeListener,

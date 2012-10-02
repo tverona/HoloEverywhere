@@ -30,11 +30,11 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
 
 import com.WazaBe.HoloEverywhere.FontLoader;
 import com.WazaBe.HoloEverywhere.LayoutInflater;
 import com.WazaBe.HoloEverywhere.R;
-import com.actionbarsherlock.internal.nineoldandroids.widget.NineFrameLayout;
 
 public class CalendarView extends NineFrameLayout {
 	public interface OnDateChangeListener {

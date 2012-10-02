@@ -8,11 +8,11 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.WazaBe.HoloEverywhere.LayoutInflater;
 import com.WazaBe.HoloEverywhere.R;
 import com.WazaBe.HoloEverywhere.app.Fragment;
-import com.WazaBe.HoloEverywhere.widget.ListView;
 
 public abstract class PreferenceFragment extends Fragment implements
 		PreferenceManager.OnPreferenceTreeClickListener {

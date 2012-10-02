@@ -17,6 +17,7 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.WazaBe.HoloEverywhere.LayoutInflater;
@@ -24,7 +25,6 @@ import com.WazaBe.HoloEverywhere.R;
 import com.WazaBe.HoloEverywhere.app.AlertDialog;
 import com.WazaBe.HoloEverywhere.app.AlertDialog.Builder;
 import com.WazaBe.HoloEverywhere.internal.AlertController.AlertParams.OnPrepareListViewListener;
-import com.WazaBe.HoloEverywhere.widget.ListView;
 
 public class RingtonePicker implements OnItemSelectedListener, Runnable,
 		OnClickListener, OnPrepareListViewListener, OnCancelListener,

@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 
 import com.WazaBe.HoloDemo.R;
 import com.WazaBe.HoloEverywhere.LayoutInflater;
-import com.WazaBe.HoloEverywhere.sherlock.SFragment;
+import com.WazaBe.HoloEverywhere.app.Fragment;
 
-public class AboutFragment extends SFragment {
+public class AboutFragment extends Fragment {
 	private final class EmailListener implements OnClickListener {
 		private final String subject, to;
 
