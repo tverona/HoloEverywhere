@@ -169,7 +169,7 @@ public class DatePicker extends NineFrameLayout {
 	public DatePicker(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		TypedArray a = context.obtainStyledAttributes(attrs,
-				R.styleable.DatePicker, defStyle, 0);
+				R.styleable.DatePicker, defStyle, R.style.Holo_DatePicker);
 		boolean spinnersShown = a.getBoolean(
 				R.styleable.DatePicker_spinnersShown, true);
 		boolean calendarViewShown = a.getBoolean(

@@ -458,18 +458,18 @@ public class CalendarView extends NineFrameLayout {
 	private final int mWeekSeperatorLineWidth;
 
 	public CalendarView(Context context) {
-		this(context, null, 0);
+		this(context, null);
 	}
 
 	public CalendarView(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
+		this(context, attrs, R.attr.calendarViewStyle);
 	}
 
 	public CalendarView(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, 0);
+		super(context, attrs, defStyle);
 		setCurrentLocale(Locale.getDefault());
 		TypedArray attributesArray = context.obtainStyledAttributes(attrs,
-				R.styleable.CalendarView, R.attr.calendarViewStyle, 0);
+				R.styleable.CalendarView, defStyle, R.style.Holo_CalendarView);
 		mShowWeekNumber = attributesArray.getBoolean(
 				R.styleable.CalendarView_showWeekNumber,
 				CalendarView.DEFAULT_SHOW_WEEK_NUMBER);

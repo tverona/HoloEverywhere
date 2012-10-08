@@ -12,6 +12,11 @@
 	<attr name="dropdownListPreferredItemHeight" format="reference" />
 	<attr name="textAppearanceLargePopupMenu" format="reference" />
 	<attr name="textAppearanceSmallPopupMenu" format="reference" />
+<<<<<<< .merge_file_Uvf4BW
+=======
+	<attr name="selectableItemBackground" format="reference" />
+	-->
+>>>>>>> .merge_file_dUT6nW
 	<attr name="preferenceFrameLayoutStyle" format="reference" />
 	<attr name="preferenceScreenStyle" format="reference" />
 	<attr name="preferenceFragmentStyle" format="reference" />
@@ -35,7 +40,6 @@
 	<attr name="buttonBarButtonStyle" format="reference" />
 	<attr name="borderlessButtonStyle" format="reference" />
 	<attr name="segmentedButtonStyle" format="reference" />
-	<attr name="selectableItemBackground" format="reference" />
 	<attr name="listPreferredItemHeightLarge" format="dimension" />
 	<attr name="dividerHorizontal" format="reference" />
 	<attr name="listDividerAlertDialog" format="reference" />

@@ -95,5 +95,4 @@ public class NineFrameLayout extends FrameLayout {
 		}
 		super.setVisibility(visibility);
 	}
-
 }
