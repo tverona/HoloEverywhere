@@ -12,11 +12,7 @@
 	<attr name="dropdownListPreferredItemHeight" format="reference" />
 	<attr name="textAppearanceLargePopupMenu" format="reference" />
 	<attr name="textAppearanceSmallPopupMenu" format="reference" />
-<<<<<<< .merge_file_Uvf4BW
-=======
 	<attr name="selectableItemBackground" format="reference" />
-	-->
->>>>>>> .merge_file_dUT6nW
 	<attr name="preferenceFrameLayoutStyle" format="reference" />
 	<attr name="preferenceScreenStyle" format="reference" />
 	<attr name="preferenceFragmentStyle" format="reference" />
@@ -122,6 +118,11 @@
 		<attr name="android:animationResolution" />
 	</declare-styleable>
 	<declare-styleable name="Preference">
+<<<<<<< HEAD
+=======
+		<!--
+		Already defined in ABS
+>>>>>>> origin/dev
 		<attr name="icon" format="reference" />
 		<attr name="title" format="string" />
 		<attr name="key" format="string" />

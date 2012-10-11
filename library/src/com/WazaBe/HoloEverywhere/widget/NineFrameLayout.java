@@ -5,92 +5,93 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.nineoldandroids.view.animation.AnimatorProxy;
+import com.actionbarsherlock.internal.nineoldandroids.view.animation.AnimatorProxy;
 
 public class NineFrameLayout extends FrameLayout {
-	private final AnimatorProxy proxy;
+	private final AnimatorProxy mProxy;
 
 	public NineFrameLayout(Context context) {
 		super(context);
-		proxy = AnimatorProxy.NEEDS_PROXY ? AnimatorProxy.wrap(this) : null;
+		mProxy = AnimatorProxy.NEEDS_PROXY ? AnimatorProxy.wrap(this) : null;
 	}
 
 	public NineFrameLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		proxy = AnimatorProxy.NEEDS_PROXY ? AnimatorProxy.wrap(this) : null;
+		mProxy = AnimatorProxy.NEEDS_PROXY ? AnimatorProxy.wrap(this) : null;
 	}
 
 	public NineFrameLayout(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		proxy = AnimatorProxy.NEEDS_PROXY ? AnimatorProxy.wrap(this) : null;
+		mProxy = AnimatorProxy.NEEDS_PROXY ? AnimatorProxy.wrap(this) : null;
 	}
 
-	@SuppressLint("NewApi")
 	@Override
+	@SuppressLint("NewApi")
 	public float getAlpha() {
-		if (proxy != null) {
-			return proxy.getAlpha();
+		if (AnimatorProxy.NEEDS_PROXY) {
+			return mProxy.getAlpha();
+		} else {
+			return super.getAlpha();
 		}
-		return super.getAlpha();
 	}
 
-	@SuppressLint("NewApi")
 	@Override
+	@SuppressLint("NewApi")
 	public float getTranslationX() {
-		if (proxy != null) {
-			return proxy.getTranslationX();
+		if (AnimatorProxy.NEEDS_PROXY) {
+			return mProxy.getTranslationX();
+		} else {
+			return super.getTranslationX();
 		}
-		return super.getTranslationX();
 	}
 
-	@SuppressLint("NewApi")
 	@Override
+	@SuppressLint("NewApi")
 	public float getTranslationY() {
-		if (proxy != null) {
-			return proxy.getTranslationY();
+		if (AnimatorProxy.NEEDS_PROXY) {
+			return mProxy.getTranslationY();
+		} else {
+			return super.getTranslationY();
 		}
-		return super.getTranslationY();
 	}
 
-	@SuppressLint("NewApi")
-	public void onVisibilityChanged(View changedView, int visibility) {
-		super.onVisibilityChanged(changedView, visibility);
-	}
-
-	@SuppressLint("NewApi")
 	@Override
+	@SuppressLint("NewApi")
 	public void setAlpha(float alpha) {
-		if (proxy != null) {
-			proxy.setAlpha(alpha);
+		if (AnimatorProxy.NEEDS_PROXY) {
+			mProxy.setAlpha(alpha);
+		} else {
+			super.setAlpha(alpha);
 		}
-		super.setAlpha(alpha);
 	}
 
-	@SuppressLint("NewApi")
 	@Override
+	@SuppressLint("NewApi")
 	public void setTranslationX(float translationX) {
-		if (proxy != null) {
-			proxy.setTranslationX(translationX);
+		if (AnimatorProxy.NEEDS_PROXY) {
+			mProxy.setTranslationX(translationX);
+		} else {
+			super.setTranslationX(translationX);
 		}
-		super.setTranslationX(translationX);
 	}
 
-	@SuppressLint("NewApi")
 	@Override
+	@SuppressLint("NewApi")
 	public void setTranslationY(float translationY) {
-		if (proxy != null) {
-			proxy.setTranslationY(translationY);
+		if (AnimatorProxy.NEEDS_PROXY) {
+			mProxy.setTranslationY(translationY);
+		} else {
+			super.setTranslationY(translationY);
 		}
-		super.setTranslationY(translationY);
 	}
 
 	@Override
 	public void setVisibility(int visibility) {
-		if (proxy != null) {
+		if (mProxy != null) {
 			if (visibility == GONE) {
 				clearAnimation();
 			} else if (visibility == VISIBLE) {
-				setAnimation(proxy);
+				setAnimation(mProxy);
 			}
 		}
 		super.setVisibility(visibility);
