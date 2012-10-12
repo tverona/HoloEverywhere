@@ -67,6 +67,12 @@ public class DemoActivity extends Activity {
 				| ThemeManager.FULLSCREEN);
 	}
 
+	public void setMixedTheme(View v) {
+		ThemeManager.restartWithTheme(this,
+				ThemeManager.LIGHT_WITH_DARK_ACTION_BAR
+						| ThemeManager.FULLSCREEN);
+	}
+
 	public void showAbout(View v) {
 		replaceFragment(android.R.id.content, new AboutFragment(), "about");
 	}
@@ -74,7 +80,7 @@ public class DemoActivity extends Activity {
 	public void showAlertDialog(View v) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("AlertDialog");
-		builder.setIcon(R.drawable.icon);
+		builder.setIcon(R.drawable.alert_dialog);
 		builder.setMessage("Is fully-working port of AlertDialog from Android Jelly Bean\n"
 				+ "Yes, I know it's a long text. At the same time check that part.");
 		builder.setPositiveButton("Positive", null);
@@ -126,6 +132,9 @@ public class DemoActivity extends Activity {
 		View content = LayoutInflater.inflate(this, R.layout.popup_window);
 		final PopupWindow w = new PopupWindow(content,
 				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		w.setBackgroundDrawable(getResources().getDrawable(
+				ThemeManager.isLight(this) ? R.drawable.dialog_full_holo_light
+						: R.drawable.dialog_full_holo_dark));
 		content.findViewById(R.id.imageButton).setOnClickListener(
 				new OnClickListener() {
 					@Override
