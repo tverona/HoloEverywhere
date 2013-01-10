@@ -92,11 +92,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     private LayoutInflater mInflater;
     private final Object mLock = new Object();
     private boolean mNotifyOnChange = true;
-
     private List<T> mObjects;
-
     private ArrayList<T> mOriginalValues;
-
     private int mResource;
 
     public ArrayAdapter(Context context, int textViewResourceId) {
@@ -180,25 +177,32 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
     private View createViewFromResource(int position, View convertView,
             ViewGroup parent, int resource) {
         View view;
-        TextView text;
+        TextView text = null;
         if (convertView == null) {
             view = FontLoader.apply(mInflater.inflate(resource, parent, false));
         } else {
             view = convertView;
         }
         try {
-            if (mFieldId == 0) {
-                text = (TextView) view;
-            } else {
-                text = (TextView) view.findViewById(mFieldId);
+            if (view != null) {
+                if (mFieldId > 0) {
+                    text = (TextView) view.findViewById(mFieldId);
+                } else {
+                    text = (TextView) view.findViewById(android.R.id.text1);
+                }
+                if (text == null && view instanceof TextView) {
+                    text = (TextView) view;
+                }
             }
-        } catch (ClassCastException e) {
+            if (text == null) {
+                throw new NullPointerException();
+            }
+        } catch (RuntimeException e) {
             Log.e("ArrayAdapter",
                     "You must supply a resource ID for a TextView");
             throw new IllegalStateException(
                     "ArrayAdapter requires the resource ID to be a TextView", e);
         }
-
         T item = getItem(position);
         if (item instanceof CharSequence) {
             text.setText((CharSequence) item);

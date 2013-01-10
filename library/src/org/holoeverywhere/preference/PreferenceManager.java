@@ -64,6 +64,14 @@ public class PreferenceManager {
         return context.getPackageName() + "_preferences";
     }
 
+    public static String makeNameById(int id) {
+        if (id > 0) {
+            return "preference_0x" + Integer.toHexString(id);
+        } else {
+            return null;
+        }
+    }
+
     public static void setDefaultValues(Context context, int resId,
             boolean readAgain) {
         PreferenceManager.setDefaultValues(context,
@@ -86,17 +94,9 @@ public class PreferenceManager {
             pm.setSharedPreferencesName(sharedPreferencesName);
             pm.setSharedPreferencesMode(sharedPreferencesMode);
             pm.inflateFromResource(context, resId, null);
-
             SharedPreferences.Editor editor = defaultValueSp.edit().putBoolean(
                     PreferenceManager.KEY_HAS_SET_DEFAULT_VALUES, true);
-            try {
-                if (VERSION.SDK_INT < 9) {
-                    throw new AbstractMethodError();
-                }
-                editor.apply();
-            } catch (AbstractMethodError unused) {
-                editor.commit();
-            }
+            editor.apply();
         }
     }
 
@@ -121,6 +121,7 @@ public class PreferenceManager {
     private List<OnActivityResultListener> mActivityResultListeners;
     private List<OnActivityStopListener> mActivityStopListeners;
     private Context mContext;
+
     private SharedPreferences.Editor mEditor;
 
     private PreferenceFragment mFragment;
@@ -255,6 +256,14 @@ public class PreferenceManager {
         }
 
         return mPreferenceScreen.findPreference(key);
+    }
+
+    public Preference findPreference(int id) {
+        if (mPreferenceScreen == null) {
+            return null;
+        }
+
+        return mPreferenceScreen.findPreference(id);
     }
 
     Activity getActivity() {

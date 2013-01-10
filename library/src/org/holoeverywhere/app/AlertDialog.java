@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Message;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
@@ -24,7 +25,13 @@ import android.widget.ListAdapter;
 public class AlertDialog extends Dialog implements DialogInterface,
         AlertDecorViewInstaller {
     public static class Builder {
+        private static final Class<?>[] CONSTRUCTOR_SIGNATURE = {
+                Context.class, int.class
+        };
+        private Class<? extends AlertDialog> clazz;
         private final AlertController.AlertParams P;
+
+        private final String TAG = getClass().getSimpleName();
 
         public Builder(Context context) {
             this(context, AlertDialog.resolveDialogTheme(context, 0));
@@ -37,15 +44,32 @@ public class AlertDialog extends Dialog implements DialogInterface,
         }
 
         public AlertDialog create() {
-            final AlertDialog dialog = new AlertDialog(P.mContext, P.mTheme);
+            AlertDialog dialog = null;
+            if (clazz != null) {
+                try {
+                    dialog = clazz.getConstructor(CONSTRUCTOR_SIGNATURE).newInstance(P.mContext,
+                            P.mTheme);
+                } catch (Exception e) {
+                    Log.e(TAG, "Cannot create AlertDialog instance from clazz " + clazz.getName()
+                            + ", use default", e);
+                }
+            }
+            if (dialog == null) {
+                dialog = new AlertDialog(P.mContext, P.mTheme);
+            }
             P.apply(dialog.mAlert);
             dialog.setCancelable(P.mCancelable);
             if (P.mCancelable) {
                 dialog.setCanceledOnTouchOutside(true);
             }
-            dialog.setOnCancelListener(P.mOnCancelListener);
+            if (P.mOnCancelListener != null) {
+                dialog.setOnCancelListener(P.mOnCancelListener);
+            }
             if (P.mOnKeyListener != null) {
                 dialog.setOnKeyListener(P.mOnKeyListener);
+            }
+            if (P.mOnDismissListener != null) {
+                dialog.setOnDismissListener(P.mOnDismissListener);
             }
             return dialog;
         }
@@ -58,6 +82,11 @@ public class AlertDialog extends Dialog implements DialogInterface,
                 final OnClickListener listener) {
             P.mAdapter = adapter;
             P.mOnClickListener = listener;
+            return this;
+        }
+
+        public Builder setAlertDialogClass(Class<? extends AlertDialog> clazz) {
+            this.clazz = clazz;
             return this;
         }
 
@@ -192,6 +221,11 @@ public class AlertDialog extends Dialog implements DialogInterface,
             return this;
         }
 
+        public Builder setOnDismissListener(OnDismissListener onDismissListener) {
+            P.mOnDismissListener = onDismissListener;
+            return this;
+        }
+
         public Builder setOnItemSelectedListener(
                 final AdapterView.OnItemSelectedListener listener) {
             P.mOnItemSelectedListener = listener;
@@ -220,11 +254,6 @@ public class AlertDialog extends Dialog implements DialogInterface,
                 final OnClickListener listener) {
             P.mPositiveButtonText = P.mContext.getText(textId);
             P.mPositiveButtonListener = listener;
-            return this;
-        }
-
-        public Builder setRecycleOnMeasureEnabled(boolean enabled) {
-            P.mRecycleOnMeasure = enabled;
             return this;
         }
 

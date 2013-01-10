@@ -7,7 +7,6 @@ import org.holoeverywhere.ThemeManager.SuperStartActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 
-import com.actionbarsherlock.ActionBarSherlock;
 import com.actionbarsherlock.ActionBarSherlock.OnActionModeFinishedListener;
 import com.actionbarsherlock.ActionBarSherlock.OnActionModeStartedListener;
 import com.actionbarsherlock.ActionBarSherlock.OnCreatePanelMenuListener;
@@ -24,7 +23,11 @@ public interface IHoloActivity extends IHolo, SuperStartActivity,
         OnCreatePanelMenuListener, OnPreparePanelListener,
         OnMenuItemSelectedListener, OnActionModeStartedListener,
         OnActionModeFinishedListener, SuperSystemService, ContextMenuListener {
-    public ActionBarSherlock getSherlock();
+    public static interface OnWindowFocusChangeListener {
+        public void onWindowFocusChanged(boolean hasFocus);
+    }
+
+    public void addOnWindowFocusChangeListener(OnWindowFocusChangeListener listener);
 
     public ActionBar getSupportActionBar();
 

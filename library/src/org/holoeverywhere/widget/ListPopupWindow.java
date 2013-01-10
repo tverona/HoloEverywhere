@@ -37,14 +37,6 @@ public class ListPopupWindow {
             mHijackFocus = hijackFocus;
         }
 
-        /*
-         * TODO
-         * @Override View obtainView(int position, boolean[] isScrap) { View
-         * view = super.obtainView(position, isScrap); if (view instanceof
-         * TextView) { ((TextView) view).setHorizontallyScrolling(true); }
-         * return view; }
-         */
-
         @Override
         public boolean hasFocus() {
             return mHijackFocus || super.hasFocus();
@@ -64,6 +56,14 @@ public class ListPopupWindow {
         public boolean isInTouchMode() {
             return mHijackFocus && mListSelectionHidden
                     || super.isInTouchMode();
+        }
+
+        @Override
+        public View onPrepareView(View view, int position) {
+            if (view instanceof android.widget.TextView) {
+                ((android.widget.TextView) view).setHorizontallyScrolling(true);
+            }
+            return view;
         }
     }
 
@@ -165,6 +165,7 @@ public class ListPopupWindow {
     private boolean mModal;
     private DataSetObserver mObserver;
     private PopupWindow mPopup;
+
     private int mPromptPosition = ListPopupWindow.POSITION_PROMPT_ABOVE;
 
     private View mPromptView;
@@ -686,7 +687,7 @@ public class ListPopupWindow {
         }
         mAdapter = adapter;
         if (mAdapter != null) {
-            adapter.registerDataSetObserver(mObserver);
+            mAdapter.registerDataSetObserver(mObserver);
         }
         if (mDropDownList != null) {
             mDropDownList.setAdapter(mAdapter);

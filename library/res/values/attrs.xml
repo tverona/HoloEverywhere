@@ -56,6 +56,8 @@
 	<attr name="autoCompleteTextViewStyle" format="reference" />
 	<attr name="panelMenuListWidth" format="dimension" />
 	<attr name="textAppearanceListItem" format="reference" />
+	<attr name="holoActionBarTheme" format="reference" />
+	<attr name="modalBackgroundWrapper" format="reference" />
 	<attr name="gravity">
 		<flag name="top" value="0x30" />
 		<flag name="bottom" value="0x50" />
@@ -134,6 +136,7 @@
 		<attr name="icon" format="reference" />
 		<attr name="title" format="string" />
 		-->
+		<attr name="id" />
 		<attr name="icon" />
 		<attr name="title" />
 		<attr name="key" format="string" />
@@ -145,6 +148,7 @@
 		<attr name="enabled" format="boolean" />
 		<attr name="selectable" format="boolean" />
 		<attr name="dependency" format="string" />
+		<attr name="depends" format="reference" />
 		<attr name="persistent" format="boolean" />
 		<attr name="defaultValue" format="string|boolean|integer|reference|float" />
 		<attr name="shouldDisableView" format="boolean" />
@@ -335,5 +339,25 @@
 		<attr name="android:maxItemsPerRow" />
 		<attr name="android:maxItems" />
 		<attr name="android:moreIcon" />
+	</declare-styleable>
+	<declare-styleable name="ExpandableListView">
+		<attr name="android:groupIndicator" />
+		<attr name="android:childIndicator" />
+		<attr name="android:indicatorLeft" />
+		<attr name="android:indicatorRight" />
+		<attr name="android:childIndicatorLeft" />
+		<attr name="android:childIndicatorRight" />
+		<attr name="android:childDivider" />
+	</declare-styleable>
+	<declare-styleable name="FastScroll">
+		<attr name="fastScrollThumbDrawable" format="reference" />
+		<attr name="fastScrollPreviewBackgroundRight" format="reference" />
+		<attr name="fastScrollPreviewBackgroundLeft" format="reference" />
+		<attr name="fastScrollTrackDrawable" format="reference" />
+		<attr name="fastScrollOverlayPosition">
+			<enum name="floating" value="0" />
+			<enum name="atThumb" value="1" />
+		</attr>
+		<attr name="fastScrollTextColor" format="color" />
 	</declare-styleable>
 </resources>

@@ -1,6 +1,8 @@
 {
     "blocks": {
         "Base": {
+            "activatedBackgroundIndicator": "@drawable/activated_background_holo", 
+            "android:activatedBackgroundIndicator": "?activatedBackgroundIndicator", 
             "android:dialogTheme": "?dialogTheme", 
             "android:dividerHorizontal": "?dividerHorizontal", 
             "android:dividerVertical": "?dividerVertical", 
@@ -13,10 +15,15 @@
             "dividerVertical": "?android:listDivider", 
             "dropdownListPreferredItemHeight": "?listPreferredItemHeight", 
             "editTextPreferenceStyle": "@style/Holo.PreferenceDialog.EditTextPreference", 
+            "fastScrollOverlayPosition": "atThumb", 
+            "fastScrollTextColor": "@color/primary_text_holo_dark", 
+            "fastScrollThumbDrawable": "@drawable/fastscroll_thumb_holo", 
             "holoTheme": true, 
             "listPreferredItemHeight": "64dip", 
             "listPreferredItemHeightLarge": "80dp", 
             "listPreferredItemHeightSmall": "48dp", 
+            "listPreferredItemPaddingLeft": "8dp", 
+            "listPreferredItemPaddingRight": "8dp", 
             "numberPickerInputTextStyle": "@style/Holo.EditText.NumberPickerInputText", 
             "numberPickerPreferenceStyle": "@style/Holo.PreferenceDialog.NumberPickerPreference", 
             "numberPickerStyle": "@style/Holo.NumberPicker", 
@@ -33,6 +40,7 @@
             "seekBarDialogPreferenceStyle": "@style/Holo.PreferenceDialog.SeekBarDialogPreference", 
             "seekBarPreferenceStyle": "@style/Holo.PreferenceSeekBar", 
             "switchPreferenceStyle": "@style/Holo.PreferenceSwitch", 
+            "textAppearanceListItem": "?android:textAppearanceLarge", 
             "textAppearanceListItemSmall": "?android:attr/textAppearanceMedium", 
             "timePickerStyle": "@style/Holo.TimePicker", 
             "yesNoPreferenceStyle": "@style/Holo.PreferenceDialog.YesNoPreference"
@@ -47,11 +55,15 @@
             "calendarViewStyle": "@style/Holo.CalendarView", 
             "dialogTheme": "@style/Holo.Theme.Dialog", 
             "dropDownListViewStyle": "@style/Holo.ListView.DropDown", 
+            "fastScrollPreviewBackgroundLeft": "@drawable/fastscroll_label_left_holo_dark", 
+            "fastScrollPreviewBackgroundRight": "@drawable/fastscroll_label_right_holo_dark", 
+            "fastScrollTrackDrawable": "@drawable/fastscroll_track_holo_dark", 
             "include": [
                 "Base"
             ], 
             "listDividerAlertDialog": "@drawable/list_divider_holo_dark", 
             "listPopupWindowStyle": "@style/Holo.ListPopupWindow", 
+            "modalBackgroundWrapper": "@drawable/modal_background_holo_dark", 
             "segmentedButtonStyle": "@style/Holo.SegmentedButton", 
             "selectableItemBackground": "@drawable/item_background_holo_dark", 
             "spinnerDropDownItemStyle": "@style/Holo.TextView.SpinnerItem.DropDown", 
@@ -60,8 +72,6 @@
             "switchStyle": "@style/Holo.Switch", 
             "switchStyleOld": "@style/Holo.Switch.Old", 
             "textAppearanceLargePopupMenu": "@style/Holo.TextAppearance.PopupMenu.Large", 
-            "textAppearanceListItem": "?android:textAppearanceLarge", 
-            "textAppearanceListItemSmall": "?android:textAppearanceMedium", 
             "textAppearanceSmallPopupMenu": "@style/Holo.TextAppearance.PopupMenu.Small", 
             "textColorAlertDialogListItem": "@color/primary_text_holo_dark"
         }, 
@@ -75,11 +85,15 @@
             "calendarViewStyle": "@style/Holo.CalendarView.Light", 
             "dialogTheme": "@style/Holo.Theme.Dialog.Light", 
             "dropDownListViewStyle": "@style/Holo.ListView.DropDown.Light", 
+            "fastScrollPreviewBackgroundLeft": "@drawable/fastscroll_label_left_holo_light", 
+            "fastScrollPreviewBackgroundRight": "@drawable/fastscroll_label_right_holo_light", 
+            "fastScrollTrackDrawable": "@drawable/fastscroll_track_holo_light", 
             "include": [
                 "Base"
             ], 
             "listDividerAlertDialog": "@drawable/list_divider_holo_light", 
             "listPopupWindowStyle": "@style/Holo.ListPopupWindow.Light", 
+            "modalBackgroundWrapper": "@drawable/modal_background_holo_light", 
             "segmentedButtonStyle": "@style/Holo.SegmentedButton.Light", 
             "selectableItemBackground": "@drawable/item_background_holo_light", 
             "spinnerDropDownItemStyle": "@style/Holo.TextView.SpinnerItem.DropDown.Light", 

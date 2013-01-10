@@ -14,6 +14,7 @@ import static org.holoeverywhere.R.style.Holo_Theme_Light_NoActionBar_Fullscreen
 import static org.holoeverywhere.R.style.Holo_Theme_NoActionBar;
 import static org.holoeverywhere.R.style.Holo_Theme_NoActionBar_Fullscreen;
 
+import org.holoeverywhere.ThemeManager.ThemeGetter;
 import org.holoeverywhere.ThemeManager.ThemeGetter.ThemeTag;
 import org.holoeverywhere.app.Application;
 
@@ -140,11 +141,6 @@ public final class ThemeManager {
      * action bar, use {@link #MIXED} flag
      */
     public static final int LIGHT = 2;
-    /**
-     * @deprecated Use {@link #MIXED} instead
-     */
-    @Deprecated
-    public static final int LIGHT_WITH_DARK_ACTION_BAR = 4;
     /**
      * Flag indicates on the light theme with dark action bar
      */
@@ -350,30 +346,6 @@ public final class ThemeManager {
         return ThemeManager.isLight(ThemeManager.getTheme(intent));
     }
 
-    /**
-     * @deprecated Use {@link #isMixed(Activity)} instead
-     */
-    @Deprecated
-    public static boolean isLightWithDarkActionBar(Activity activity) {
-        return isMixed(activity);
-    }
-
-    /**
-     * @deprecated Use {@link #isMixed(int)} instead
-     */
-    @Deprecated
-    public static boolean isLightWithDarkActionBar(int i) {
-        return isMixed(i);
-    }
-
-    /**
-     * @deprecated Use {@link #isMixed(Intent)} instead
-     */
-    @Deprecated
-    public static boolean isLightWithDarkActionBar(Intent intent) {
-        return isMixed(intent);
-    }
-
     public static boolean isMixed(Activity activity) {
         return ThemeManager.isMixed(ThemeManager.getTheme(activity));
     }
@@ -511,14 +483,6 @@ public final class ThemeManager {
     }
 
     /**
-     * @deprecated Use {@link #restartWithMixedTheme(Activity)} instead
-     */
-    @Deprecated
-    public static void restartWithLightWithDarkActionBarTheme(Activity activity) {
-        restartWithMixedTheme(activity);
-    }
-
-    /**
      * Check activity on light with dark action bar theme and restart it if
      * theme incorrect.
      * 
@@ -555,7 +519,7 @@ public final class ThemeManager {
             theme &= ThemeManager._THEME_MASK;
         }
         if (force || ThemeManager.getTheme(activity) != theme) {
-            Intent intent = activity.getIntent();
+            Intent intent = new Intent(activity.getIntent());
             intent.setClass(activity, activity.getClass());
             intent.putExtra(ThemeManager._THEME_TAG, theme);
             if (activity.isRestricted()) {
@@ -611,14 +575,6 @@ public final class ThemeManager {
      */
     public static void setThemeGetter(ThemeGetter themeGetter) {
         ThemeManager._THEME_GETTER = themeGetter;
-    }
-
-    /**
-     * @deprecated Use {@link #setModifier(int)} instead
-     */
-    @Deprecated
-    public static void setThemeModifier(int mod) {
-        setModifier(mod);
     }
 
     /**

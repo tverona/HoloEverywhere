@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>demo</artifactId>
@@ -9,7 +10,7 @@
 	<parent>
 		<groupId>org.holoeverywhere</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.4.0</version>
+		<version>1.4.2</version>
 	</parent>
 
 	<dependencies>
@@ -21,7 +22,7 @@
 		<dependency>
 			<groupId>org.holoeverywhere</groupId>
 			<artifactId>slidingmenu</artifactId>
-			<version>1.4.0</version>
+			<version>1.4.2</version>
 			<type>apklib</type>
 		</dependency>
 	</dependencies>
@@ -45,7 +46,42 @@
 				<artifactId>android-maven-plugin</artifactId>
 				<extensions>true</extensions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jarsigner-plugin</artifactId>
+				<inherited>true</inherited>
+			</plugin>
 		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.holoeverywhere</groupId>
+										<artifactId>translator</artifactId>
+										<versionRange>[1.4.0,)</versionRange>
+										<goals>
+											<goal>build</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 	<profiles>
@@ -86,25 +122,16 @@
 							</zipalign>
 							<manifest>
 								<versionName>${project.version}</versionName>
+								<versionCodeAutoIncrement>true</versionCodeAutoIncrement>
 							</manifest>
+							<proguard>
+								<skip>false</skip>
+								<config>${project.baseDir}/proguard.cfg</config>
+							</proguard>
 							<sign>
 								<debug>false</debug>
 							</sign>
 						</configuration>
-					</plugin>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-jarsigner-plugin</artifactId>
-						<executions>
-							<execution>
-								<phase>package</phase>
-								<goals>
-									<goal>sign</goal>
-									<goal>verify</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 
 					<plugin>

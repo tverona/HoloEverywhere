@@ -1,4 +1,4 @@
-# HoloEverywhere v1.4
+# HoloEverywhere v1.4.1
 ## What is it?
 Bringing Holo Theme from Android 4.1 to 2.1 and above.
 ## How to use?
@@ -8,7 +8,8 @@ Bringing Holo Theme from Android 4.1 to 2.1 and above.
 ```
 git clone git://github.com/ChristopheVersieux/HoloEverywhere.git HoloEverywhere
 cd HoloEverywhere
-git submodule --init --recursive update
+git checkout holoeverywhere-1.4.1
+git submodule update --init --recursive
 ```
 You also may use git GUI programs
 
