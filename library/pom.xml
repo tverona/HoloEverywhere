@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.holoeverywhere</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.4.2</version>
+		<version>1.4.2-CUSTOM</version>
 	</parent>
 
 	<dependencies>
@@ -60,11 +60,11 @@
 				<artifactId>android-maven-plugin</artifactId>
 			</plugin>
 
-			<plugin>
+			<!--<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jarsigner-plugin</artifactId>
 				<inherited>true</inherited>
-			</plugin>
+			</plugin>-->
 		</plugins>
 
 		<pluginManagement>

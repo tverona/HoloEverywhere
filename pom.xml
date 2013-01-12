@@ -6,7 +6,7 @@
 	<groupId>org.holoeverywhere</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.4.2</version>
+	<version>1.4.2-CUSTOM</version>
 
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
@@ -21,10 +21,10 @@
 
 	<modules>
 		<module>library</module>
-		<module>slidingmenu</module>
-		<module>demo</module>
-		<module>builder</module>
-		<module>translator</module>
+		<!--<module>slidingmenu</module>
+		<module>demo</module>-->
+		<!--<module>builder</module>
+		<module>translator</module>-->
 	</modules>
 
 	<scm>
