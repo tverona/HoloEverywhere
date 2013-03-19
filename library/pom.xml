@@ -33,7 +33,7 @@
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
 
-		<plugins>
+		<!--<plugins>
 			<plugin>
 				<groupId>org.holoeverywhere</groupId>
 				<artifactId>builder</artifactId>
@@ -53,7 +53,7 @@
 						<param>strings.json</param>
 					</input>
 				</configuration>
-			</plugin>
+			</plugin>-->
 
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
